@@ -1,0 +1,79 @@
+---
+import '../styles/dotAnimation.css';
+const cells = 20 * 20; // Increased number of cells for better coverage
+---
+
+<!-- Main container for the entire welcome page -->
+<main class="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Container for all page sections -->
+    <div class="space-y-16">
+        
+        <!-- Hero section with animation and title -->
+        <section class=" relative min-h-[80vh] flex items-center justify-center shadow-lg rounded-xl overflow-hidden">
+            <!-- Animation background -->
+            <div class="absolute w-full h-full bg-gray-50 rounded-2xl overflow-hidden inset-0 filter brightness-95">
+                <div class="dot-container ">
+                    {Array.from({ length: cells }).map(() => (
+                        <div class="square">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div class="absolute w-full h-full inset-0 bg-radial-gradient pointer-events-none"></div>
+            <div class="absolute w-full h-full inset-0 vignette-effect pointer-events-none"></div>
+            <!-- Main title -->
+            <div class=" relative z-10 text-center flex items-center justify-center w-full filter drop-shadow-2xl">
+                <h1 class="text-7xl md:text-8xl font-bold text-black glow-effect" style="font-family: 'Bricolage Grotesque', sans-serif;">YourUniversity</h1>
+            </div>
+        </section>
+        
+        <!-- About Us section -->
+        <section class="about-section">
+            <div class="about-container">
+                <h2>Nosotros</h2>
+                <p>Información sobre YourUniversity y su misión educativa.</p>
+            </div>
+        </section>
+        
+        <!-- Tools/Features section -->
+        <section class="tools-section">
+            <div class="tools-container">
+                <h2>Herramientas</h2>
+                <div class="tools-grid">
+                    <!-- Tool items will go here -->
+                    <div class="tool-item">Herramienta 1</div>
+                    <div class="tool-item">Herramienta 2</div>
+                    <div class="tool-item">Herramienta 3</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Additional sections can be added here -->
+        <section class="contact-section">
+            <div class="contact-container">
+                <h2>Contacto</h2>
+                <p>Información de contacto y formulario.</p>
+            </div>
+        </section>
+        
+    </div>
+</main>
+<style>
+    .bg-radial-gradient {
+      background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+    }
+    
+    .glow-effect {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4);
+    }
+    
+    .vignette-effect {
+      background: radial-gradient(ellipse at center, 
+                                 rgba(255, 255, 255, 0.47) 0%, 
+                                 rgba(249, 250, 251, 0.681) 1%, 
+                                 hsl(0, 0%, 100%) 100%);
+      mix-blend-mode: overlay;
+    }
+</style>

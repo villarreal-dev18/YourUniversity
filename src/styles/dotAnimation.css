@@ -1,0 +1,114 @@
+:root {
+  --cols: 30;
+  --rows: 30;
+  --dotSize: clamp(0.5vmin, 0.8vmin, 1vmin);
+  --gutter: clamp(0.8vmin, 1.5vmin, 2vmin);
+  --lineWeight: clamp(1px, 1.5px, 2px);
+  --speed: 3.5s;
+  --bg: white;
+  --fg: #c0c0c0; /* Color más oscuro para mejor visibilidad */
+}
+
+@media (max-width: 768px) {
+  :root {
+    --cols: 20;
+    --rows: 20;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --cols: 15;  /* Aún menos columnas en pantallas muy pequeñas */
+    --rows: 15;  /* Aún menos filas en pantallas muy pequeñas */
+  }
+}
+
+.dot-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+/* Ajustamos las proporciones de los cuadrados */
+.square {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+.square::before,
+.square::after {
+  content: '';
+  position: absolute;
+  display: block;
+  background: var(--fg);
+  border-radius: 4px;
+}
+
+.square:before {
+  top: 0;
+  left: calc(var(--dotSize)/2 + var(--gutter)/2);
+  width: calc(100% - var(--dotSize) - var(--gutter));
+  height: var(--lineWeight);
+  transform: translateY(-50%) rotate(0deg);
+  animation: lineYpulse var(--speed) infinite alternate-reverse ease-in;
+}
+
+.square:after {
+  top: calc(var(--dotSize)/2 + var(--gutter)/2);
+  left: 0;
+  width: var(--lineWeight);
+  height: calc(100% - var(--dotSize) - var(--gutter));
+  transform: translateX(-50%) rotate(0deg);
+  animation: lineXpulse var(--speed) infinite alternate-reverse ease-in;
+}
+
+.dot {
+  position: absolute;
+  width: var(--dotSize);
+  height: var(--dotSize);
+  background: var(--fg);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: dotPulse var(--speed) infinite alternate ease-in;
+}
+
+.dot:last-child {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  animation-direction: alternate-reverse;
+}
+
+@keyframes dotPulse {
+  0%, 35% {
+    transform: translate3d(-50%, -50%, 0) scale(0);
+  }
+  65%, 100% {
+    transform: translate3d(-50%, -50%, 0) scale(1);
+  }
+}
+
+@keyframes lineXpulse {
+  0%, 35% {
+    transform: translate3d(-50%, 0, 0) rotate(0deg);
+  }
+  65%, 100% {
+    transform: translate3d(-50%, 0, 0) rotate(90deg);
+  }
+}
+
+@keyframes lineYpulse {
+  0%, 35% {
+    transform: translate3d(0, -50%, 0) rotate(0deg);
+  }
+  65%, 100% {
+    transform: translate3d(0, -50%, 0) rotate(90deg);
+  }
+}

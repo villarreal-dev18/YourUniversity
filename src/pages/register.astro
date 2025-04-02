@@ -1,0 +1,112 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout>
+    <div>
+        <div class=" grid grid-flow-row justify-center items-center  px-3 py-2 hover:cursor-pointer mr-8">
+            <a href="/" >
+                <img src="/logo_Yu_preview_rev_2.png" alt="YourUniversity logo" class="w-12 h-12 ml-12">
+            </a>
+            <div class="flex justify-center items-center;">
+                <span class=" text-black font-extrabold text-2xl" 
+                style="font-family: 'Bricolage Grotesque', sans-serif;">YourUniversity</span>
+            </div>
+        </div>
+    </div>
+    <div class="flex items-center justify-center">
+        <p class=" max-w-md text-center  font-medium " style="font-family: 'Inter', sans-serif;">
+            Bienvenido a YourUniversity, tu plataforma educativa en línea.
+             Esto nos permitirá mejorar tu experiencia y personalizarla.
+             Para empezar, por favor ingresa tus datos personales.
+        </p>
+    </div>
+    <div class=" rounded-2xl bg-white ml-60 mr-60 mt-12 shadow-lg px-20 py-20 ">
+        <form action="input" class="">
+            <h1 
+             class="text-black text-2xl font-medium mb-4"
+             style="font-family: 'Inter', sans-serif;">Datos personales</h1>
+            <div class="grid py-2 relative">
+                <input 
+                 id="user_name" 
+                 class="peer text-black rounded-2xl outline-none border-none
+                  bg-gray-100 px-4 py-4 w-full focus:border-black focus:ring-2
+                   focus:ring-gray-600 focus:bg-gray-200 placeholder-transparent
+                   placeholder:text-sm"
+                 placeholder="Nombres"
+                 type="text">
+                <label 
+                 for="user_name" 
+                 class="absolute left-4 top-6 text-sm text-gray-600
+                   px-1 transition-all 
+                  peer-placeholder-shown:text-base 
+                  peer-placeholder-shown:text-gray-500 
+                  peer-placeholder-shown:top-6 
+                  peer-focus:top-2
+                  peer-focus:text-xs peer-focus:text-black">
+                    Nombres
+                </label>
+            </div>
+            <div class="grid py-2 relative">
+                <input 
+                 id="last_name" 
+                 class="peer text-black rounded-2xl outline-none border-none
+                  bg-gray-100 px-4 py-4 w-full focus:border-black focus:ring-2
+                   focus:ring-gray-600 focus:bg-gray-200 placeholder-transparent
+                   placeholder:text-sm"
+                 placeholder="Apellidos"
+                 type="text">
+                <label 
+                 for="last_name" 
+                 class="absolute left-4 top- text-sm text-gray-600
+                   px-1 transition-all 
+                  peer-placeholder-shown:text-base 
+                  peer-placeholder-shown:text-gray-500 
+                  peer-placeholder-shown:top-6 
+                  peer-focus:top-2
+                  peer-focus:text-xs peer-focus:text-black">
+                    Apellidos
+                </label>
+            </div>
+            <div class="grid py-2 relative">
+                <input 
+                 id="email" 
+                 class="peer text-black rounded-2xl outline-none border-none
+                  bg-gray-100 px-4 py-4 w-full focus:border-black focus:ring-2
+                   focus:ring-gray-600 focus:bg-gray-200 placeholder-transparent
+                   placeholder:text-sm"
+                 placeholder="Correo"
+                 type="text">
+                <label 
+                 for="email" 
+                 class="absolute left-4 top- text-sm text-gray-600
+                   px-1 transition-all 
+                  peer-placeholder-shown:text-base 
+                  peer-placeholder-shown:text-gray-500 
+                  peer-placeholder-shown:top-6 
+                  peer-focus:top-2
+                  peer-focus:text-xs peer-focus:text-black">
+                    Correo
+                </label>
+            </div>
+            
+            <div class="grid grid-cols-2 items-center justify-center">
+                
+                <div>
+                    <input
+                     type="checkbox"
+                     class="ml-2"
+                     id="check">
+                    <label for="">Acepto términos y condiciones</label>
+                </div>
+                <div  >
+                    <input type="submit" 
+                    class="flex justify-center 
+                    items-center bg-gray-950 rounded-full 
+                    py-3 text-white font-medium mt-6"
+                    style="font-family: 'Inter', sans-serif;">
+                </div>
+            </div>
+        </form>
+    </div>
+    
+</Layout>
