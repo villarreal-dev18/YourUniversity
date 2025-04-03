@@ -3,15 +3,15 @@ console.log("Hello World!");
 ---
 
 
-<nav class="px-6 py-4 bg-gray-50 flex justify-between">
-        <div class="flex items-center ml-48">
+<nav class="px-6 py-4 bg-gray-50 flex justify-between ">
+        <div class=" flex items-center justify-start lg:ml-48 lg">
             <div class="rounded-full px-3 py-2 hover:bg-gray-200 mr-8">
                     <a href="/" class="flex items-center">
                         <img src="/logo_Yu_preview_rev_2.png" alt="YourUniversity logo" class="w-8 h-8">
                         <span class="text-black font-extrabold text-xl ml-1" style="font-family: 'Bricolage Grotesque', sans-serif; margin-left: 1rem;">YourUniversity</span>
                     </a>
             </div>
-            <ul class="flex space-x-6 items-center">
+            <ul class="hidden space-x-6 items-center lg:flex lg:overflow-auto">
                     <li class="justify-center">
                         <a href="/nosotros"class="text-gray-400 font-medium hover:text-black" 
                         style="font-family: 'Inter', sans-serif;">Nosotros</a>
@@ -22,7 +22,7 @@ console.log("Hello World!");
                     </li>
             </ul>
         </div>
-        <div class="flex items-center space-x-5">
+        <div class="hidden  items-center space-x-5 lg:flex lg:overflow-auto">
             <a href="/login" class="text-gray-400 font-medium hover:text-black hover:bg-gray-200 px-2 py-1 rounded-full"
             style="font-family: 'Inter', sans-serif;">Iniciar Sesión</a>
             <a class="text-gray-500">|</a>

@@ -4,7 +4,7 @@
   --dotSize: clamp(0.5vmin, 0.8vmin, 1vmin);
   --gutter: clamp(0.8vmin, 1.5vmin, 2vmin);
   --lineWeight: clamp(1px, 1.5px, 2px);
-  --speed: 3.5s;
+  --speed: 3s;
   --bg: white;
   --fg: #c0c0c0; /* Color más oscuro para mejor visibilidad */
 }
