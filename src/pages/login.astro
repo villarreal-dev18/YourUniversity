@@ -18,8 +18,8 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="flex items-center justify-center ml-4 md:ml-0">
             <p class=" max-w-md text-center  font-medium " style="font-family: 'Inter', sans-serif;">
-                Bienvenido a YourUniversity, tu plataforma educativa en línea.
-                Para empezar, por favor ingresa tus datos personales.
+                Bienvenido a YourUniversity, ¿Qué hay de nuevo?.
+                Inicia Sesión para continuar.
             </p>
         </div>
         <div class=" rounded-2xl bg-white ml-2 mr-2 mt-2 shadow-lg  px-4 py-4 md:px-20 md:py-16 md:ml-60 md:mt-8 md:mr-60 md:mb-8">
@@ -27,53 +27,14 @@ import Layout from "../layouts/Layout.astro";
                 <h1 
                     class="text-black text-2xl font-medium mb-4"
                     style="font-family: 'Inter', sans-serif;">
-                    Datos personales
+                    Inicio de Sesión
                 </h1>
-                <div class="grid py-2 relative">
-                    <input 
-                    id="user_name" 
-                    class="peer text-black rounded-2xl outline-none border-none
-                     bg-gray-100 px-4 py-4 w-full focus:border-black focus:ring-0 focus:bg-gray-200 placeholder-transparent
-                    placeholder:text-sm hover:cursor-pointer hover:bg-gray-200"
-                    placeholder="Nombres"
-                    type="text">
-                    <label 
-                    for="user_name" 
-                    class="absolute left-4 top-6 text-sm text-gray-600
-                    px-1 transition-all 
-                     peer-placeholder-shown:text-base 
-                    peer-placeholder-shown:text-gray-500 
-                      peer-placeholder-shown:top-6 
-                     peer-focus:top-2
-                     peer-focus:text-xs peer-focus:text-black">
-                    Nombres
-                    </label>
-                </div>
-                <div class="grid py-2 relative">
-                    <input 
-                    id="last_name" 
-                    class="peer text-black rounded-2xl outline-none border-none
-                     bg-gray-100 px-4 py-4 w-full focus:border-black focus:ring-0 focus:bg-gray-200 placeholder-transparent
-                    placeholder:text-sm hover:cursor-pointer hover:bg-gray-200"
-                    placeholder="Apellidos"
-                    type="text">
-                    <label 
-                    for="last_name" 
-                     class="absolute left-4 top- text-sm text-gray-600
-                    px-1 transition-all 
-                    peer-placeholder-shown:text-base 
-                     peer-placeholder-shown:text-gray-500 
-                    peer-placeholder-shown:top-6 
-                    peer-focus:top-2
-                    peer-focus:text-xs peer-focus:text-black">
-                        Apellidos
-                    </label>
-                </div>
                 <div class="grid py-2 relative">
                     <input 
                     id="email" 
                     class="peer text-black rounded-2xl outline-none border-none
-                    bg-gray-100 px-4 py-4 w-full focus:border-black focus:ring-0 focus:bg-gray-200 placeholder-transparent
+                    bg-gray-100 px-4 py-4 w-full focus:border-black focus:ring-0
+                    focus:bg-gray-200 placeholder-transparent
                     placeholder:text-sm hover:cursor-pointer hover:bg-gray-200"
                     placeholder="Correo"
                     type="text">
@@ -89,7 +50,27 @@ import Layout from "../layouts/Layout.astro";
                         Correo
                     </label>
                 </div>
-
+                <div class="grid py-2 relative">
+                    <input 
+                    id="password" 
+                    class="peer text-black rounded-2xl outline-none border-none
+                    bg-gray-100 px-4 py-4 w-full focus:border-black focus:ring-0
+                    focus:bg-gray-200 placeholder-transparent
+                    placeholder:text-sm hover:cursor-pointer hover:bg-gray-200"
+                    placeholder="Contraseña"
+                    type="password">
+                    <label 
+                        for="password" 
+                        class="absolute left-4 top- text-sm text-gray-600
+                        px-1 transition-all 
+                        peer-placeholder-shown:text-base 
+                         peer-placeholder-shown:text-gray-500 
+                        peer-placeholder-shown:top-6 
+                        peer-focus:top-2
+                        peer-focus:text-xs peer-focus:text-black">
+                        Contraseña
+                    </label>
+                </div>
             
                 <div class="grid grid-cols-1 items-center justify-center md:grid-cols-2">
                 
@@ -97,16 +78,11 @@ import Layout from "../layouts/Layout.astro";
                         <input
                         type="checkbox"
                         class="ml-6  w-4 h-4 bg-gray-300 border border-gray-300 
-                        focus:ring-0 focus:ring-offset-0 focus:outline-none text-gray-950
+                        focus:ring-o focus:ring-offset-0 focus:outline-none text-gray-950
                         focus:ring-transparent
                         rounded-md checked:bg-gray-950 checked:border-transparent"
                         id="check">
-                        <label class="text-gray-600" for="check">Acepto 
-                            <a class=" underline text-black hover:text-gray-500">
-                                términos</a>
-                                y 
-                            <a class=" underline text-black hover:text-gray-500">
-                                condiciones</a>.
+                        <label class="text-gray-600" for="check">Recordarme.
                         </label>
                     </div>
                     <div class=" flex justify-end" >
@@ -115,7 +91,7 @@ import Layout from "../layouts/Layout.astro";
                         items-center bg-gray-950 rounded-full 
                         md:py-3 md:px-6 px-2 py-2 text-white font-medium mt-6"
                         style="font-family: 'Inter', sans-serif;"
-                        value="Siguiente"
+                        value="Iniciar Sesión"
                         >
                     </div>
                 </div>
