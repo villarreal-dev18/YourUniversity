@@ -1,6 +1,58 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+
 ---
 <Layout>
-    
+    <div class="h-full max-w-64 p-4 border-r borded-neutral-600 rounded-3xl bg-neutral-100">
+        <!--icono -->
+        <div class="grid grid-cols-3">
+            <div class="flex col-span-2 items-center">
+                <span class="text-black font-extrabold text-base flex items-center" style="font-family: 'Bricolage Grotesque', sans-serif;">
+                    <img src="/logo_Yu_preview_rev_2.png" alt="YourUniversity logo" class="w-8 h-8">
+                    YourUniversity
+                </span>
+            </div>
+            
+            <button class="col-span-1 hover:bg-neutral-200 rounded-lg my-4 mx-5 flex  items-center justify-center px-0 group">
+                <svg fill="#b8b8b8" class="group-hover:fill-neutral-900 "
+                 height="16px" width="16px" version="1.1" id="Layer_1" 
+                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 viewBox="0 0 330 330" xml:space="preserve" stroke="#ababab"><g id="SVGRepo_bgCarrier"
+                  stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier"> <path id="XMLID_6_" 
+                    d="M165,0C74.019,0,0,74.019,0,165s74.019,165,165,165s165-74.019,165-165S255.981,0,165,0z M205.606,234.394
+                     c5.858,5.857,5.858,15.355,0,21.213C202.678,258.535,198.839,260,195,260s-7.678-1.464-10.606-4.394l-80-79.998
+                      c-2.813-2.813-4.394-6.628-4.394-10.606c0-3.978,1.58-7.794,4.394-10.607l80-80.002c5.857-5.858,15.355-5.858,
+                      21.213,0 c5.858,5.857,5.858,15.355,0,21.213l-69.393,69.396L205.606,234.394z"></path> </g>
+                </svg>
+            </button>
+        </div>
+        <!--barra-busqueda-->
+        <div class="mt-6 relative hover:scale-105">
+            <div class="absolute inset-y-0  left-3 flex items-center pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+            </div>
+            <input 
+            class="bg-neutral-200 border border-neutral-300 rounded-full my-1 pl-8 pr-3
+            py-1 hover:bg-neutral-300  text-xs w-52 focus:outline-none focus:ring-0 focus:border-neutral-300
+            outline-none"
+            placeholder="Buscar"
+            type="text">
+        </div>
+        <!--barra-->
+        <nav>
+            <div>
+
+            </div>
+            <div>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li>Configuración</li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 </Layout>
