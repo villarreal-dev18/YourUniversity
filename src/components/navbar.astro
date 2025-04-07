@@ -1,9 +1,10 @@
 ---
-console.log("Hello World!");
+import LoginModal from './reacts/loginmodal.jsx';
+import RegisterModal from './reacts/registermodal.jsx';
 ---
 
 
-<nav class="px-2 py-4 bg-gray-50 flex justify-between md:px-6 md:py-4">
+<nav class="col-span-1 px-2 py-4 bg-gray-50 flex justify-between md:px-6 md:py-4">
         <div class=" flex items-center justify-start lg:ml-48 ">
             <div class="rounded-full px-1 py-2 hover:bg-gray-200 md:mr-2">
                     <a href="/" class="flex items-center">
@@ -22,16 +23,16 @@ console.log("Hello World!");
                     </li>
             </ul>
         </div>
-        <div class="flex items-center justify-center space-x-5 md:hidden">
+        <div id="mobil-login-btn" class="flex items-center justify-center space-x-5 sm:ml-96 md:hidden">
           <button class="bg-gray-950 text-white rounded-full px-2 py-1">Empezar
           </button>
         </div>
         <div class="hidden  items-center space-x-5 lg:flex lg:overflow-auto">
-            <a href="/login" class="text-gray-400 font-medium hover:text-black hover:bg-gray-200 px-2 py-1 rounded-full"
-            style="font-family: 'Inter', sans-serif;">Iniciar Sesión</a>
-            <a class="text-gray-500">|</a>
-            <a href="/register" class="text-gray-400 font-medium hover:text-black  hover:bg-gray-200 px-2 py-1 rounded-full"
-            style="font-family: 'Inter', sans-serif;">Registrarse</a>
+            <button id="login-btn-md" class="text-gray-400 font-medium hover:text-black hover:bg-gray-200 px-2 py-1 rounded-full"
+            style="font-family: 'Inter', sans-serif;">Iniciar Sesión</button>
+            <p class="text-gray-500">|</p>
+            <button id="register-btn-md" class="text-gray-400 font-medium hover:text-black  hover:bg-gray-200 px-2 py-1 rounded-full"
+            style="font-family: 'Inter', sans-serif;">Registrarse</button>
         </div>
         <div class="col-span-1 flex justify-center items-center ">
             <div class="justify-center items-center" title="Toggle theme">
@@ -55,3 +56,5 @@ console.log("Hello World!");
               </div>
         </div>
 </nav>
+<LoginModal />
+<RegisterModal />
