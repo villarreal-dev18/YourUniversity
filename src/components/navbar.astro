@@ -1,6 +1,6 @@
 ---
-import LoginModal from './reacts/loginmodal.jsx';
-import RegisterModal from './reacts/registermodal.jsx';
+import LoginModal from './reacts/modals/LoginModal.jsx';
+import RegisterModal from './reacts/modals/RegisterModal.jsx';
 ---
 
 
@@ -56,5 +56,20 @@ import RegisterModal from './reacts/registermodal.jsx';
               </div>
         </div>
 </nav>
-<LoginModal />
-<RegisterModal />
+<LoginModal  client:load/>
+<RegisterModal client:load/>
+
+<script>
+  // Script para manejar los clics en los botones
+  document.getElementById('login-btn-md')?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('open-login-modal'));
+  });
+  
+  document.getElementById('register-btn-md')?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('open-register-modal'));
+  });
+  
+  document.getElementById('mobil-login-btn')?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('open-login-modal'));
+  });
+</script>
