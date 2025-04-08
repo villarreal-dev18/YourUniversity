@@ -39,7 +39,6 @@ const LoginModal = () => {
                 <div className="grid py-2 px-10 relative">
                     <input 
                     id="email" 
-
                     className="peer text-black rounded-2xl outline-none border-none
                     bg-gray-100 px-6 py-4 w-full focus:border-black focus:ring-0
                     focus:bg-gray-200 placeholder-transparent left-4
