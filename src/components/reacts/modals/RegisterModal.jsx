@@ -8,7 +8,6 @@ const RegisterModal = () => {
     const [email, setEmail] = useState('');
     const [sex, setSex] = useState(''); // ['Masculino', 'Femenino', 'Otro']
     const [dob, setDob] = useState(''); // ['1990', '1991', ..., '2023' ]
-    const [phone, setPhone] = useState('');
     const [university, setUniversity] = useState('');
     const [career, setCareer] = useState('');
     const [password, setPassword] = useState('');
@@ -241,7 +240,72 @@ const RegisterModal = () => {
             </>
             );
           case 3: //universdidad y carrera
-            return <Step3 />;
+            return (
+            <>
+                <h1 className="text-xl font-medium text-black px-10" style={{fontFamily:"'Inter', sans-serif"}} >
+                    Datos académicos
+                </h1>
+                <div className="grid py-2 px-10 relative">
+                    <select id="university" className="peer text-black rounded-2xl outline-none border-none
+                             bg-gray-100 px-6 py-4 w-full focus:border-black focus:ring-0 focus:bg-gray-200
+                            placeholder:text-sm hover:cursor-pointer hover:bg-gray-200 transition-colors duration-150">
+                            <option value="" disabled selected>Universidad</option>
+                            <option value="Universidad_Surcolombiana" >Universidad Surcolombiana</option>
+                            <option value="Universidad Nacional">Universidad Nacional</option>
+                            <option value="Universidad de Antioquia">Universidad de Antioquia</option>
+                            <option value="Universidad de los Andes">Universidad de los Andes</option>
+                            <option value="Universidad de Caldas">Universidad de Caldas</option>
+                            <option value="Universidad de Cundinamarca">Universidad de Cundinamarca</option>
+                            <option value="Universidad de Córdoba">Universidad de Córdoba</option>
+                            <option value="Universidad de la Santísima Trinidad">Universidad de la Santísima Trinidad</option>
+                            <option value="Universidad de La Guajira">Universidad de La Guajira</option>
+                            <option value="Universidad de La Sabana">Universidad de La Sabana</option>
+                            <option value="Universidad de Manizales">Universidad de Manizales</option>
+                            <option value="Universidad de Medellín">Universidad de Medellín</option>
+                            <option value="Universidad de Nariño">Universidad de Nariño</option>
+                            <option value="Universidad de Pamplona">Universidad de Pamplona</option>
+                            <option value="Universidad de San Buenaventura">Universidad de San Buenaventura</option>
+                            <option value="Universidad de San Carlos de Guatemala">Universidad de San Carlos de Guatemala</option>
+                            <option value="Universidad de San Mateo">Universidad de San Mateo</option>
+                            <option value="Universidad de Santa Marta">Universidad de Santa Marta</option>
+                            <option value="Universidad de Sucre">Universidad de Sucre</option>
+                            <option value="Universidad de Tolima">Universidad de Tolima</option>
+
+                    </select>
+
+                </div>
+                <div  className="grid py-2 px-10 relative">
+                    <select id="career" className="peer text-black rounded-2xl outline-none border-none
+                             bg-gray-100 px-6 py-4 w-full focus:border-black focus:ring-0 focus:bg-gray-200
+                            placeholder:text-sm hover:cursor-pointer hover:bg-gray-200 transition-colors duration-150">
+                            <option value="" disabled selected>Carrera</option>
+                            <option value="Ingeniería de Sistemas" >Ingeniería de Sistemas</option>
+                            <option value="Ingeniería de Software">Ingeniería de Software</option>
+                            <option value="Ingeniería de Minas">Ingeniería de Minas</option>
+                            <option value="Ingeniería de Alimentos">Ingeniería de Alimentos</option>
+                            <option value="Ingeniería de Minas">Ingeniería de Minas</option>
+                            
+                            </select>
+                </div>
+                <div className="grid grid-cols-2 px-10 gap-4">
+                    <div className="flex justify-start">
+                        <button onClick={prevStep} className="flex justify-center items-center
+                        rounded-full mp:py-3 md:px-6 px-2 py-2 text-neutral-400 font-medium
+                         hover:text-black" >Atrás</button>
+                    </div>
+                    <div className=" flex justify-end" >
+                        <button 
+                                onClick={nextStep}
+                                className="flex justify-center 
+                                items-center bg-gray-950 rounded-full 
+                                md:py-3 md:px-6 px-2 py-2 text-white font-medium hover:scale-105"
+                            style={{fontFamily: "'Inter', sans-serif"}}
+                        >Siguiente
+                        </button>
+                    </div>
+                </div>
+            </>
+            );
           case 4: //contraseña
             return <Step4 />;
           default:
