@@ -1,0 +1,75 @@
+---
+import LoginModal from './reacts/modals/LoginModal.jsx';
+import RegisterModal from './reacts/modals/RegisterModal.jsx';
+---
+
+
+<nav class="col-span-1 px-2 py-4 bg-gray-50 flex justify-between md:px-6 md:py-4">
+        <div class=" flex items-center justify-start lg:ml-48 ">
+            <div class="rounded-full px-1 py-2 hover:bg-gray-200 md:mr-2">
+                    <a href="/" class="flex items-center">
+                        <img src="/logo_Yu_preview_rev_2.png" alt="YourUniversity logo" class="w-8 h-8">
+                        <span class="text-black font-extrabold text-xl " style="font-family: 'Bricolage Grotesque', sans-serif;">YourUniversity</span>
+                    </a>
+            </div>
+            <ul class="hidden space-x-6 items-center lg:flex lg:overflow-auto">
+                    <li class="justify-center">
+                        <a href="/nosotros"class="text-gray-400 font-medium hover:text-black" 
+                        style="font-family: 'Inter', sans-serif;">Nosotros</a>
+                    </li>
+                    <li class="justify-center">
+                        <a href="/herramientas" class="text-gray-400 font-medium hover:text-black" 
+                        style="font-family: 'Inter', sans-serif;">Herramientas</a>
+                    </li>
+            </ul>
+        </div>
+        <div id="mobil-login-btn" class="flex items-center justify-center space-x-5 sm:ml-96 md:hidden">
+          <button class="bg-gray-950 text-white rounded-full px-2 py-1">Empezar
+          </button>
+        </div>
+        <div class="hidden  items-center space-x-5 lg:flex lg:overflow-auto">
+            <button id="login-btn-md" class="text-gray-400 font-medium hover:text-black hover:bg-gray-200 px-2 py-1 rounded-full"
+            style="font-family: 'Inter', sans-serif;">Iniciar Sesión</button>
+            <p class="text-gray-500">|</p>
+            <button id="register-btn-md" class="text-gray-400 font-medium hover:text-black  hover:bg-gray-200 px-2 py-1 rounded-full"
+            style="font-family: 'Inter', sans-serif;">Registrarse</button>
+        </div>
+        <div class="col-span-1 flex justify-center items-center ">
+            <div class="justify-center items-center" title="Toggle theme">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  width="20px"
+                  height="20px"
+                  fill="#b2b2b2"
+                  class="theme-toggle__expand"
+                  viewBox="0 0 32 32"
+                >
+                  <clipPath id="theme-toggle__expand__cutout">
+                    <path d="M0-11h25a1 1 0 0017 13v30H0Z" />
+                  </clipPath>
+                  <g clip-path="url(#theme-toggle__expand__cutout)">
+                    <circle cx="16" cy="16" r="8.4" />
+                    <path d="M18.3 3.2c0 1.3-1 2.3-2.3 2.3s-2.3-1-2.3-2.3S14.7.9 16 .9s2.3 1 2.3 2.3zm-4.6 25.6c0-1.3 1-2.3 2.3-2.3s2.3 1 2.3 2.3-1 2.3-2.3 2.3-2.3-1-2.3-2.3zm15.1-10.5c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3zM3.2 13.7c1.3 0 2.3 1 2.3 2.3s-1 2.3-2.3 2.3S.9 17.3.9 16s1-2.3 2.3-2.3zm5.8-7C9 7.9 7.9 9 6.7 9S4.4 8 4.4 6.7s1-2.3 2.3-2.3S9 5.4 9 6.7zm16.3 21c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3zm2.4-21c0 1.3-1 2.3-2.3 2.3S23 7.9 23 6.7s1-2.3 2.3-2.3 2.4 1 2.4 2.3zM6.7 23C8 23 9 24 9 25.3s-1 2.3-2.3 2.3-2.3-1-2.3-2.3 1-2.3 2.3-2.3z" />
+                  </g>
+                </svg>
+              </div>
+        </div>
+</nav>
+<LoginModal  client:load/>
+<RegisterModal client:load/>
+
+<script>
+  // Script para manejar los clics en los botones
+  document.getElementById('login-btn-md')?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('open-login-modal'));
+  });
+  
+  document.getElementById('register-btn-md')?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('open-register-modal'));
+  });
+  
+  document.getElementById('mobil-login-btn')?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('open-login-modal'));
+  });
+</script>
