@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import Input from '../../ui/Input.jsx';
+import Button from '../../ui/Button.jsx';
+import CloseButton from '../../ui/CloseButton.jsx';
+
 
 const RegisterModal = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -41,11 +45,7 @@ const RegisterModal = () => {
                     <>
                         <div className=" fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center  justify-center p-4">
                             <div className="bg-white rounded-2xl shadow-xl max-w-4xl min-h-[600px] h-auto w-full p-32 relative">
-                                <button onClick={() =>setIsOpen(false)} className=" absolute top-4 right-4 text-gray-500 hover:text-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
+                                <CloseButton onClick={() => setIsOpen(false)} />
                                 {/* Indicador de pasos */}
                                 <div className="absolute top-8 left-0 right-0 flex justify-center">
                                     <div className="flex items-center">
@@ -72,75 +72,35 @@ const RegisterModal = () => {
                                     style={{fontFamily: "'Inter', sans-serif"}}>
                                     Datos personales
                                 </h2>
-                                <div className="grid py-2 px-10 relative">
-                                    <input 
-                                    id="user_name" 
-                                    className="peer text-black rounded-2xl outline-none border-none
-                                    bg-gray-100 px-6 py-4 w-full focus:border-black focus:ring-0 focus:bg-gray-200 placeholder-transparent
-                                    placeholder:text-sm hover:cursor-pointer transition-colors duration-150
-                                     hover:bg-gray-200"
-                                    placeholder="Nombres"
-                                    type="text"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                    required
+                                <div className="grid py-2 px-10">
+                                    <Input 
+                                        id="name"
+                                        type="text"
+                                        label="Nombres"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                        required="true"
                                     />
-                                    <label 
-                                    htmlFor="user_name" 
-                                    className="absolute left-4 top-6 text-sm text-gray-600
-                                    px-12 transition-all 
-                                    peer-placeholder-shown:text-base 
-                                    peer-placeholder-shown:text-gray-500 
-                                    peer-placeholder-shown:top-6 
-                                    peer-focus:top-2
-                                    peer-focus:text-xs peer-focus:text-black">
-                                    Nombres
-                                    </label>
                                 </div>
                                 <div className="grid py-2 px-10 relative">
-                                    <input 
-                                    id="last_name" 
-                                    className="peer text-black rounded-2xl outline-none border-none
-                                    bg-gray-100 px-6 py-4 w-full focus:border-black focus:ring-0 focus:bg-gray-200 placeholder-transparent
-                                    placeholder:text-sm hover:cursor-pointer hover:bg-gray-200 transition-colors duration-150"
-                                    placeholder="Apellidos"
+                                    <Input 
+                                    id="lastname"
                                     type="text"
+                                    label="Apellidos"
                                     value={lastname}
                                     onChange={(e) => setLastname(e.target.value)}
-                                    required
+                                    required="true"
                                     />
-                                    <label 
-                                    htmlFor="last_name" 
-                                    className="absolute left-4 text-sm text-gray-600
-                                    px-12 transition-all peer-placeholder-shown:text-base 
-                                    peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-6 
-                                    peer-focus:top-2 peer-focus:text-xs peer-focus:text-black">
-                                        Apellidos
-                                    </label>
                                 </div>
                                 <div className="grid py-2 px-10 relative">
-                                        <input 
-                                        id="email" 
-                                        className="peer text-black rounded-2xl outline-none border-none
-                                        bg-gray-100 px-6 py-4 w-full focus:border-black focus:ring-0
-                                        focus:bg-gray-200 placeholder-transparent transition-colors duration-150
-                                        placeholder:text-sm hover:cursor-pointer hover:bg-gray-200"
-                                        placeholder="Correo"
-                                        type="email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        required
-                                        />
-                                        
-                                        <label 
-                                            htmlFor="email" 
-                                            className="absolute left-4 top- text-sm text-gray-600
-                                            px-12 transition-all duration-200 ease-out
-                                            peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 
-                                            peer-placeholder-shown:top-6 peer-focus:top-2 
-                                            peer-focus:text-xs peer-focus:text-black">
-                                            Correo
-                                        </label>
+                                    <Input 
+                                    id="email"
+                                    type="email"
+                                    label="Correo electrónico"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    required="true"
+                                    />
                                 </div>
                                 <div className="grid grid-cols-1 px-10 items-center justify-center md:grid-cols-2">
                             
@@ -161,14 +121,9 @@ const RegisterModal = () => {
                                         </label>
                                     </div>
                                     <div className=" flex justify-end" >
-                                        <button 
-                                        onClick={nextStep}
-                                        className="flex justify-center 
-                                        items-center bg-gray-950 rounded-full 
-                                        md:py-3 md:px-6 px-2 py-2 text-white font-medium "
-                                        style={{fontFamily: "'Inter', sans-serif"}}
-                                        >Siguiente
-                                        </button>
+                                        <Button onClick={nextStep} size="lg">
+                                        Siguiente
+                                        </Button>
                                     </div>
                                 </div>
                             </div>
@@ -176,8 +131,7 @@ const RegisterModal = () => {
                     </>
                 );
           case 2: //sexo, dob, telefono
-            return (
-                
+            return (  
             <>
             
                 <h1 className="text-xl font-medium text-black px-10" style={{fontFamily:"'Inter', sans-serif"}} >
@@ -197,27 +151,8 @@ const RegisterModal = () => {
                         <option value="Femenino">Femenino</option>
                     </select>
                 </div>
-                <div className="grid py-2 px-10 relative">
-                    <input id="dob" 
-                    type="date" 
-                    className={`peer text-black rounded-2xl outline-none border-none
-                        bg-gray-100 px-6 py-4 w-full focus:border-black focus:ring-0 focus:bg-gray-200
-                        placeholder:text-sm hover:cursor-pointer hover:bg-gray-200 transition-colors duration-150
-                        ${dob ? '' : '[&:not(:focus)]:text-transparent [&:not(:focus)]:date:text-transparent'}`}
-                    placeholder="Fecha de Nacimiento"
-                    value={dob}
-                    onChange={(e) => setDob(e.target.value)}
-                    required
-                    />
-                    <label htmlFor="dob" className={`absolute left-4 top-6 text-sm text-gray-600
-                        px-12 transition-all duration-200 ease-out
-                        peer-placeholder-shown:text-base 
-                        peer-placeholder-shown:text-gray-500 
-                        peer-placeholder-shown:top-6 
-                        peer-focus:top-2
-                        peer-focus:text-xs peer-focus:text-black
-                        ${dob ? 'top-2 text-xs text-black' : 'top-6 text-base text-gray-500'}`} >
-                    Fecha de Nacimiento</label>
+                <div className="grid py-2 px-10 ">
+                    <Input id="dob" type="date" label="Fecha de nacimiento" />
                 </div>
                 <div className="grid grid-cols-2 px-10 gap-4">
                     <div className="flex justify-start">
