@@ -167,6 +167,14 @@ const RegisterModal = () => {
                                             Siguiente
                                         </Button>
                                     </div>
+                                    <a  className="text-black hover:text-gray-500 px-1 hover:cursor-pointer" 
+                                    onClick={(e)=> {
+                                        e.preventDefault();
+                                        setIsOpen(false);
+                                        window.dispatchEvent(new CustomEvent('open-login-modal'));
+                                    }}>
+                                        ¿Ya tienes una cuenta?
+                                    </a>
                                 </div>
                             </div>
                         </div> 
