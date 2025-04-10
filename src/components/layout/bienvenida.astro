@@ -1,5 +1,6 @@
 ---
 import '../../styles/dotanimation.css';
+import StartModal from '../features/auth/StartModal.jsx';
 const cells = 20 * 20; // Increased number of cells for better coverage
 ---
 
@@ -30,7 +31,7 @@ const cells = 20 * 20; // Increased number of cells for better coverage
                    La plataforma que te ayuda a organizar tu vida universitaria.
                    Planifica tus tareas, proyectos y eventos en un solo lugar.
                 </p>
-                <button id="start-now-modal" class=" text-xl hidden md:block md:mx-auto bg-gray-950 hover:transform hover:scale-105 hover:transition-duration-300 ease-in-out 
+                <button id="start-now-modal-md" class=" text-xl hidden md:block md:mx-auto bg-gray-950 hover:transform hover:scale-105 hover:transition-duration-300 ease-in-out 
                  text-white font-semibold rounded-full px-6 py-4 mx-96">
                     Comienza ahora
                 </button>
@@ -66,6 +67,12 @@ const cells = 20 * 20; // Increased number of cells for better coverage
         
     </div>
 </main>
+<StartModal client:load/>
+<script>
+  document.getElementById('start-now-modal-md')?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('start-now-modal'));
+  });
+</script>
 <style>
     .bg-radial-gradient {
       background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
