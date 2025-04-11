@@ -4,7 +4,7 @@ export const ThemeProvider = ({ children }) => {
     const [isDarkMode, setDarkMode] = useState(false);
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme');
-        if (savedThem === 'dark') {
+        if (savedTheme === 'dark') {
             setDarkMode(true);
             document.documentElement.classList.add('dark');
         } else if (savedTheme === 'light') {
@@ -15,9 +15,9 @@ export const ThemeProvider = ({ children }) => {
             document.documentElement.classList.add('dark');
         }
     }, []);
-    const toogleTheme = () => {
+    const toggleTheme = () => {
         setDarkMode(!isDarkMode);
-        if (isDarkMode) {
+        if (!isDarkMode) {
             document.documentElement.classList.add('dark');
             localStorage.setItem('theme', 'dark');
         } else {
@@ -26,7 +26,7 @@ export const ThemeProvider = ({ children }) => {
         }
     }
     return (
-        <ThemeContext.Provider value={{ isDarkMode, toogleTheme }}>
+        <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
             {children}
         </ThemeContext.Provider>
     );

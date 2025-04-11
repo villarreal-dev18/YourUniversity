@@ -1,33 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import CloseButton from '../../ui/CloseButton.jsx';
 import Button from '../../ui/Button.jsx';
-import RegisterModal from './RegisterModal.jsx';
-import LoginModal from './LoginModal.jsx';
+import { ThemeContext } from '../../../context/ThemeContext.jsx';
+
 const StartModal = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [login, setLogin] = useState('');
-    const [register, setRegister] = useState('');
+    const { isDarkMode } = useContext(ThemeContext);
+    
     useEffect(() => {
         const handleOpenModal = () => setIsOpen(true);
-            window.addEventListener('start-now-modal', handleOpenModal);
-            return () => {
-                window.removeEventListener('start-now-modal', handleOpenModal);
-            };
+        window.addEventListener('start-now-modal', handleOpenModal);
+        return () => {
+            window.removeEventListener('start-now-modal', handleOpenModal);
+        };
     }, []);
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Perform login logic here
-        console.log('Login attempt with:',{ login, register});
-        setIsOpen(false);
-    };
 
     if (!isOpen) return null;
+    
     return (
-        <div className=" fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl shadow-xl max-w-md min-h-[90px] h-auto w-full p-20 relative"> 
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-4">
+            <div className={`${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'} rounded-2xl shadow-xl max-w-md min-h-[90px] h-auto w-full p-20 relative transition-colors duration-300`}> 
                 <CloseButton onClick={() => setIsOpen(false)} />
                 <h1 
-                    className="text-black text-2xl font-bold mb-2 text-center"
+                    className={`${isDarkMode ? 'text-white' : 'text-black'} text-2xl font-bold mb-2 text-center transition-colors duration-300`}
                     style={{fontFamily: "'Inter', sans-serif"}}>
                     Para empezar inicia sesion o crea una cuenta
                 </h1>
@@ -57,6 +52,7 @@ const StartModal = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
+
 export default StartModal;

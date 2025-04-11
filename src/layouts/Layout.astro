@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { ThemeProvider } from '../context/ThemeContext.jsx';
 ---
 
 <!doctype html>
@@ -15,9 +16,25 @@ import '../styles/global.css';
     	<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
 		<link rel="icon" type="image/png" href="/logo_Yu_preview_rev_2.png" />
 		<title>YourUniversity</title>
+		<script is:inline>
+			const theme = (() => {
+				if (typeof localStorage !== 'undefined' && 
+				localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				}
+				return 'light';
+			})
+			if (theme === 'dark') {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
+		</script>
 	</head>
-	<body class="bg-gray-50" >
+	<body class="transition-colors duration-300 dark:bg-gray-900" >
+		<ThemeProvider>
 		<slot />
+		</ThemeProvider>
 	</body>
 </html>
 
