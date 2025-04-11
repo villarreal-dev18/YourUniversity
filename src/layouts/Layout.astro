@@ -23,7 +23,7 @@ import { ThemeProvider } from '../context/ThemeContext.jsx';
 					return localStorage.getItem('theme');
 				}
 				return 'light';
-			})
+			})();
 			if (theme === 'dark') {
 				document.documentElement.classList.add('dark');
 			} else {
@@ -33,7 +33,7 @@ import { ThemeProvider } from '../context/ThemeContext.jsx';
 	</head>
 	<body class="transition-colors duration-300 dark:bg-gray-900" >
 		<ThemeProvider>
-		<slot />
+			<slot />
 		</ThemeProvider>
 	</body>
 </html>

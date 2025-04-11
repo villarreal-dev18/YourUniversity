@@ -5,7 +5,7 @@ import { ThemeContext } from '../../../context/ThemeContext.jsx';
 
 const StartModal = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const { isDarkMode } = useContext(ThemeContext);
+    const { isDarkMode } = useState(false);
     
     useEffect(() => {
         const handleOpenModal = () => setIsOpen(true);

@@ -12,7 +12,7 @@ export default {
         // Colores personalizados para modo claro y oscuro
         primary: {
           light: '#fafafa', // bg-neutral-50 
-          dark: '#262626',  // bg-neutral-800 
+          dark: '#0a0a0a',  // bg-neutral-950 
         },
         secondary: {
           light: '#f5f5f5', // bg-neutral-100 
@@ -20,7 +20,7 @@ export default {
         },
         accent: {
           light: '#0a0a0a', // bg-neutral-950 
-          dark: '#3b82f6',  // mantenemos el azul para contraste en modo oscuro
+          dark: '#a3a3a3', 
         },
         text: {
           primary: {

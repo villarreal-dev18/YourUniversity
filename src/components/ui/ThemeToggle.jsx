@@ -35,13 +35,14 @@ const ThemeToggle = () => {
       aria-label="Cambiar tema"
     >
       {isDarkMode ? (
+        // Sun icon for light mode
         <svg
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
           width="20px"
           height="20px"
           fill="#ffffff"
-          className="theme-toggle__expand transition-colors duration-300"
+          className="transition-colors duration-300"
           viewBox="0 0 32 32"
         >
           <clipPath id="theme-toggle__expand__cutout">
@@ -53,16 +54,21 @@ const ThemeToggle = () => {
           </g>
         </svg>
       ) : (
+        // Moon icon for dark mode - fixed version
         <svg
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
           width="20px"
           height="20px"
           fill="#737373"
-          className="theme-toggle__collapse transition-colors duration-300"
-          viewBox="0 0 32 32"
+          className="transition-colors duration-300"
+          viewBox="0 0 24 24"
         >
-          <path d="M16 .5C7.4.5.5 7.4.5 16S7.4 31.5 16 31.5 31.5 24.6 31.5 16 24.6.5 16 .5zm0 28.1c-7 0-12.6-5.7-12.6-12.6 0-5.1 3-9.4 7.3-11.4.7-.3 1.5.2 1.5 1 0 .2 0 .4-.1.6-.3.6-.4 1.2-.4 1.8 0 2.8 2.3 5.1 5.1 5.1.6 0 1.2-.1 1.8-.4.2-.1.4-.1.6-.1.8 0 1.3.8 1 1.5-2 4.3-6.4 7.3-11.4 7.3-.8 0-1.5-.1-2.2-.2-.7-.1-1.2-.8-1-1.5.1-.5.5-.8 1-.9.4-.1.7-.1 1.1-.1 3.9 0 7-3.1 7-7 0-.4 0-.7-.1-1.1-.1-.5.1-.9.4-1.2.4-.4 1-.5 1.5-.2 4.3 2 7.3 6.4 7.3 11.4 0 7-5.7 12.6-12.6 12.6z" />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+          />
         </svg>
       )}
     </button>
