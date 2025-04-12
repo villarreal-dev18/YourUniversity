@@ -4,9 +4,10 @@
   --dotSize: clamp(0.5vmin, 0.8vmin, 1vmin);
   --gutter: clamp(0.8vmin, 1.5vmin, 2vmin);
   --lineWeight: clamp(1px, 1.5px, 2px);
-  --speed: 3s;
+  --speed: 3.7s;
   --bg: white;
   --fg: #c0c0c0; /* Color más oscuro para mejor visibilidad */
+  --fg-dark: #525252;
 }
 
 @media (max-width: 768px) {
@@ -69,6 +70,11 @@
   animation: lineXpulse var(--speed) infinite alternate-reverse ease-in;
 }
 
+.dark .square::before,
+.dark .square::after {
+  background:var(--fg-dark);
+}
+
 .dot {
   position: absolute;
   width: var(--dotSize);
@@ -86,9 +92,13 @@
   animation-direction: alternate-reverse;
 }
 
+ 
 :global(.dark) .dot {
   background-color: rgba(75, 75, 75, 0.5);
   
+}
+.dark .dot{
+  background-color: var(--fg-dark);
 }
 
 @keyframes dotPulse {

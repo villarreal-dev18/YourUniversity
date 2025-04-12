@@ -8,32 +8,34 @@ import ThemeToggle from '../ui/ThemeToggle.jsx';
 <nav class="col-span-1 px-2 py-4 bg-gray-50 dark:bg-primary-dark flex justify-between md:px-6 md:py-4
 transition-colors duration-300">
         <div class=" flex items-center justify-start lg:ml-48 ">
-            <div class="rounded-full px-1 py-2 hover:bg-accent-dark md:mr-2">
+            <div class="rounded-full px-1 py-2 dark:hover:bg-secondary-dark md:mr-2">
                     <a href="/" class="flex items-center">
                         <img src="/logo_Yu_preview_rev_2.png" alt="YourUniversity logo" class="w-8 h-8">
                         <span class="text-black dark:text-primary-light font-extrabold text-xl " style="font-family: 'Bricolage Grotesque', sans-serif;">YourUniversity</span>
                     </a>
             </div>
-            <ul class="hidden space-x-6 items-center lg:flex lg:overflow-auto">
+            <ul class="hidden space-x-6 items-center lg:flex  lg:overflow-auto">
                     <li class="justify-center">
-                        <a href="/nosotros"class="text-gray-400 font-medium hover:text-black" 
+                        <a href="/nosotros"class="text-text-muted-light font-medium hover:text-primary-dark dark:text-accent-dark dark:hover:text-secondary-light" 
                         style="font-family: 'Inter', sans-serif;">Nosotros</a>
                     </li>
                     <li class="justify-center">
-                        <a href="/herramientas" class="text-gray-400 font-medium hover:text-black" 
+                        <a href="/herramientas" class="text-text-muted-light font-medium hover:text-primary-dark dark:text-accent-dark dark:hover:text-secondary-light" 
                         style="font-family: 'Inter', sans-serif;">Herramientas</a>
                     </li>
             </ul>
         </div>
-        <div id="mobil-login-btn" class="flex items-center justify-center space-x-5 sm:ml-96 md:hidden">
+        <div id="mobil-login-btn" class="flex items-center justify-center space-x-5 sm:ml-96 md:hidden ">
           <button class="bg-gray-950 text-white rounded-full px-2 py-1">Empezar
           </button>
         </div>
         <div class="hidden  items-center space-x-5 lg:flex lg:overflow-auto">
-            <button id="login-btn-md" class="text-gray-400 font-medium hover:text-black hover:bg-gray-200 px-2 py-1 rounded-full"
+            <button id="login-btn-md" class="text-gray-400 font-medium hover:text-black dark:text-accent-dark dark:hover:text-text-primary-light hover:bg-gray-200 px-2 py-1 rounded-full
+            transition-colors duration-300 "
             style="font-family: 'Inter', sans-serif;">Iniciar Sesión</button>
             <p class="text-gray-500">|</p>
-            <button id="register-btn-md" class="text-gray-400 font-medium hover:text-black  hover:bg-gray-200 px-2 py-1 rounded-full"
+            <button id="register-btn-md" class="text-gray-400 font-medium hover:text-black dark:text-accent-dark dark:hover:text-text-primary-light hover:bg-gray-200 px-2 py-1 rounded-full
+            transition-colors duration-300 "
             style="font-family: 'Inter', sans-serif;">Registrarse</button>
         </div>
         <div class="col-span-1 flex justify-center items-center ">

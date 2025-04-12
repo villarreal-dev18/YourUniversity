@@ -4,10 +4,10 @@ import StartModal from '../features/auth/StartModal.jsx';
 const cells = 20 * 20;
 ---
 
-<main class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 dark:bg-gray-900 transition-colors duration-300">
+<main class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 dark:bg-primary-dark bg-primary-light transition-colors duration-300">
     <div class="space-y-20">
         <section class="relative min-h-[45vh] lg:min-h-[80vh] flex items-center justify-center shadow-lg rounded-xl overflow-hidden md:mb-3">
-            <div class="absolute w-full h-full bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden inset-0 filter brightness-95 transition-colors duration-300">
+            <div class="absolute w-full h-full bg-gray-50 dark:bg-primary-dark rounded-2xl overflow-hidden inset-0 filter brightness-95 transition-colors duration-300">
                 <div class="dot-container">
                     {Array.from({ length: cells }).map(() => (
                         <div class="square">
@@ -22,18 +22,21 @@ const cells = 20 * 20;
             
             <div class="relative mt-12 z-10 text-center grid grid-rows-3 items-center justify-center w-full filter drop-shadow-2xl">
                 <h1 class="text-4xl md:text-8xl font-bold text-black dark:text-white glow-effect transition-colors duration-300" style="font-family: 'Bricolage Grotesque', sans-serif;">YourUniversity</h1>
-                <p class="flex text-neutral-700 dark:text-gray-300 md:max-w-xl text-center md:text-xl md:mx-52 transition-colors duration-300">
+                <p class="flex dark:text-primary-light md:max-w-xl text-center md:text-xl md:mx-52 transition-colors duration-300">
                    La plataforma que te ayuda a organizar tu vida universitaria.
                    Planifica tus tareas, proyectos y eventos en un solo lugar.
                 </p>
-                <button id="start-now-modal-md" class="text-xl hidden md:block md:mx-auto bg-gray-950 dark:bg-blue-600 hover:transform hover:scale-105 hover:transition-duration-300 ease-in-out text-white font-semibold rounded-full px-6 py-4 mx-96 transition-colors duration-300">
+                <button id="start-now-modal-md" class="text-xl hidden md:block md:mx-auto bg-primary-dark
+                 dark:bg-primary-light hover:transform hover:scale-105 hover:transition-duration-300 
+                 ease-in-out text-primary-light dark:text-primary-dark font-semibold rounded-full px-6 py-4 mx-96 
+                 transition-colors duration-300">
                     Comienza ahora
                 </button>
             </div>
         </section>
         
         <!-- About Us section -->
-        <section class="about-section dark:bg-gray-900 transition-colors duration-300">
+        <section class="about-section transition-colors duration-300">
             <div class="about-container">
                 <h2 class="font-bold text-2xl text-center md:text-6xl dark:text-white transition-colors duration-300">Productividad estudiantil sin complicaciones</h2>
                 <p class="text-lg md:text-2xl text-center mt-3 dark:text-gray-300 transition-colors duration-300"> 
@@ -41,15 +44,15 @@ const cells = 20 * 20;
                   maximiza tu productividad.</p>
                 <div class="flex h-full w-full items-center justify-center">
                     <div class="grid h-full w-full gap-4 md:m-4 p-2 grid-cols-1 md:grid-cols-3 grid-rows-3 md:grid-rows-1 rounded-lg">
-                        <div class="col-span-2 md:col-span-1 row-span-1 bg-neutral-100 dark:bg-gray-800 rounded-lg shadow-md flex items-center justify-center h-96 transition-colors duration-300">
+                        <div class="col-span-2 md:col-span-1 row-span-1 dark:bg-secondary-dark rounded-lg shadow-md flex items-center justify-center h-96 transition-colors duration-300">
                             <h3 class="text-xl font-bold text-neutral-700 dark:text-white transition-colors duration-300">Crea</h3>
                         </div>
                         
-                        <div class="col-span-2 md:col-span-1 row-span-1 bg-neutral-100 dark:bg-gray-800 rounded-lg shadow-md flex items-center justify-center h-96 transition-colors duration-300">
+                        <div class="col-span-2 md:col-span-1 row-span-1 dark:bg-secondary-dark rounded-lg shadow-md flex items-center justify-center h-96 transition-colors duration-300">
                             <h3 class="text-xl font-bold text-neutral-700 dark:text-white transition-colors duration-300">Organiza</h3>
                         </div>
                         
-                        <div class="col-span-2 md:col-span-1 row-span-1 bg-neutral-100 dark:bg-gray-800 rounded-lg shadow-md flex items-center justify-center h-96 transition-colors duration-300">
+                        <div class="col-span-2 md:col-span-1 row-span-1 dark:bg-secondary-dark rounded-lg shadow-md flex items-center justify-center h-96 transition-colors duration-300">
                             <h3 class="text-xl font-bold text-neutral-700 dark:text-white transition-colors duration-300">Edita</h3>
                         </div>
                     </div>
@@ -73,8 +76,12 @@ const cells = 20 * 20;
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4);
     }
     
+    :global(.dark) .bg-radial-gradient {
+      background: radial-gradient(circle at center, transparent 0%, rgb(22, 22, 22) 100%);
+    }
+
     :global(.dark) .glow-effect {
-      text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.4);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.466), 0 0 20px rgba(255, 255, 255, 0.4);
     }
     
     .vignette-effect {
@@ -87,8 +94,9 @@ const cells = 20 * 20;
     
     :global(.dark) .vignette-effect {
       background: radial-gradient(ellipse at center, 
-                                 rgba(30, 30, 30, 0.47) 0%, 
-                                 rgba(20, 20, 20, 0.681) 1%, 
-                                 hsl(0, 0%, 10%) 100%);
+                                 rgba(100, 100, 100, 0.47) 0%, 
+                                 rgba(80, 80, 80, 0.681) 1%, 
+                                 hsl(0, 0%, 30%) 100%);
+      mix-blend-mode: overlay;
     }
 </style>
