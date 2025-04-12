@@ -1,6 +1,4 @@
 ---
-import LoginModal from '../features/auth/LoginModal.jsx';
-import RegisterModal from '../features/auth/RegisterModal.jsx';
 import ThemeToggle from '../ui/ThemeToggle.jsx';
 ---
 
@@ -36,7 +34,7 @@ transition-colors duration-300">
             <p class="text-gray-500">|</p>
             <button id="register-btn-md" class="text-gray-400 font-medium hover:text-black dark:text-accent-dark dark:hover:text-text-primary-light hover:bg-gray-200 px-2 py-1 rounded-full
             transition-colors duration-300 "
-            style="font-family: 'Inter', sans-serif;">Registrarse</button>
+            style="font-family: 'Inter', sans-serif;">Registrarse</a>
         </div>
         <div class="col-span-1 flex justify-center items-center ">
             <div class="justify-center items-center" title="Toggle theme">
@@ -44,20 +42,3 @@ transition-colors duration-300">
               </div>
         </div>
 </nav>
-<LoginModal  client:load/>
-<RegisterModal client:load/>
-
-<script>
-  // Script para manejar los clics en los botones
-  document.getElementById('login-btn-md')?.addEventListener('click', () => {
-    window.dispatchEvent(new CustomEvent('open-login-modal'));
-  });
-  
-  document.getElementById('register-btn-md')?.addEventListener('click', () => {
-    window.dispatchEvent(new CustomEvent('open-register-modal'));
-  });
-  
-  document.getElementById('mobil-login-btn')?.addEventListener('click', () => {
-    window.dispatchEvent(new CustomEvent('open-login-modal'));
-  });
-</script>

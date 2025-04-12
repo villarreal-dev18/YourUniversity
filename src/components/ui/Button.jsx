@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../../context/ThemeContext';
+import { ThemeContext } from '../../context/ThemeContext.jsx';
 
 const Button = ({
   children,
@@ -62,6 +62,10 @@ const Button = ({
       {children}
     </button>
   );
+};
+
+Button.defaultProps = {
+  onClick: () => {}
 };
 
 export default Button;

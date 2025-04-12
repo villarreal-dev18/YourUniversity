@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext.jsx';
 
 const Input = ({
   id,
@@ -10,6 +11,8 @@ const Input = ({
   onChange,
   className = ''
 }) => {
+  const { isDarkMode } = useContext(ThemeContext);
+  
   return (
     <div className="relative">
       <input 
@@ -19,24 +22,35 @@ const Input = ({
         value={value}
         onChange={onChange}
         required={required}
-        className={`peer text-black rounded-2xl outline-none border-none
-          bg-gray-100 px-6 py-4 w-full focus:border-black focus:ring-0 focus:bg-gray-200
-          placeholder:text-sm hover:bg-gray-200 transition-colors duration-150 ${className}`}
+        className={`peer rounded-2xl outline-none border-none
+          ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black'} 
+          px-6 py-4 w-full focus:border-black focus:ring-0 
+          ${isDarkMode ? 'focus:bg-gray-700' : 'focus:bg-gray-200'}
+          placeholder:text-sm 
+          ${isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-200'} 
+          transition-colors duration-150 ${className}`}
       />
       {label && (
         <label 
           htmlFor={id}
-          className="absolute left-4  text-xs text-black
+          className={`absolute left-4 text-xs 
+            ${isDarkMode ? 'text-gray-300' : 'text-black'}
             px-2 transition-all duration-200 ease-out
-            peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 
+            peer-placeholder-shown:text-base 
+            ${isDarkMode ? 'peer-placeholder-shown:text-gray-400' : 'peer-placeholder-shown:text-gray-500'} 
             peer-placeholder-shown:top-4 peer-focus:top-2 
-            peer-focus:text-xs peer-focus:text-black"
+            peer-focus:text-xs 
+            ${isDarkMode ? 'peer-focus:text-white' : 'peer-focus:text-black'}`}
         >
           {label}
         </label>
       )}
     </div>
   );
+};
+
+Input.defaultProps = {
+  onChange: () => {}
 };
 
 export default Input;

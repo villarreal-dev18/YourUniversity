@@ -1,6 +1,5 @@
 ---
 import '../../styles/dotanimation.css';
-import StartModal from '../features/auth/StartModal.jsx';
 const cells = 20 * 20;
 ---
 
@@ -61,7 +60,7 @@ const cells = 20 * 20;
         </section>
     </div>
 </main>
-<StartModal client:load/>
+
 <script>
   document.getElementById('start-now-modal-md')?.addEventListener('click', () => {
     window.dispatchEvent(new CustomEvent('start-now-modal'));
