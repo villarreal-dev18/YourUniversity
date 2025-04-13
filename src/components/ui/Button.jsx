@@ -13,17 +13,19 @@ const Button = ({
   className = '',
   style = {}
 }) => {
-  const { isDarkMode } = useContext(ThemeContext);
+  // Manejo seguro del contexto, con fallback a false si no está disponible
+  let isDarkMode = false;
+  try {
+    const context = useContext(ThemeContext);
+    isDarkMode = context?.isDarkMode || false;
+  } catch (error) {
+    console.log('ThemeContext no disponible, usando modo claro por defecto');
+  }
+
   const variants = {
-    primary: isDarkMode 
-      ? 'bg-blue-600 text-white hover:bg-blue-700' 
-      : 'bg-gray-950 text-white hover:scale-105',
-    secondary: isDarkMode
-      ? 'bg-transparent text-gray-300 hover:text-white'
-      : 'bg-transparent text-neutral-400 hover:text-black',
-    outline: isDarkMode
-      ? 'bg-transparent border border-gray-600 text-gray-300 hover:bg-gray-800'
-      : 'bg-transparent border border-gray-300 text-gray-800 hover:bg-gray-100'
+    primary: 'bg-primary-dark dark:bg-primary-light text-primary-light dark:text-primary-dark hover:scale-105',
+    secondary: 'bg-secondary-dark dark:bg-secondary-light text-secondary-light dark:text-secondary-dark hover:scale-105',
+    outline: 'bg-transparent border border-gray-300 text-gray-800 hover:bg-gray-100'
   };
 
   const sizes = {

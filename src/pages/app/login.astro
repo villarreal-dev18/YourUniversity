@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LoginComponent from '../../components/features/auth/LoginComponent.jsx';
+import { ThemeProvider } from '../../context/ThemeContext.jsx';
+---
+
+<Layout title="Iniciar Sesión | YourUniversity">
+    <ThemeProvider client:load>
+        <LoginComponent client:load />
+    </ThemeProvider>
+</Layout>
+
