@@ -16,10 +16,10 @@ export default function RegisterComponent() {
     const [termsandConditions, setTermsandConditions] = useState(false);
 
     const nextStep = () => {
-        setStep(step + 1)
+        setStep(prevStep => prevStep + 1)
     }
     const prevStep = () => {
-        setStep(step - 1)
+        setStep(prevStep => prevStep - 1)
     }
 
     const handleSubmit = (e) => {
@@ -36,26 +36,31 @@ export default function RegisterComponent() {
     const progressPercentage = `${(step / 4) * 100}%`;
 
     const ProgressBar = () => (
-            <div className="relative h-1 w-full bg-neutral-200 dark:bg-neutral-600 rounded">
-                <div className="h-1 bg-primary rounded-full" style={{ width: progressPercentage }}></div>
+            <div className="relative h-1 w-full bg-text-accent-dark dark:bg-text-accent-light rounded">
+                <div className="h-1 bg-primary-dark dark:bg-primary-light rounded-full" style={{ width: progressPercentage }}></div>
             </div>
     );
 
     const NavigationButtons = () => (
         <div className="grid grid-cols-2 px-10 gap-4">
                 <div className="flex justify-start">
-                    {prevStep && (
+                    {step > 1 && (
                         <Button onClick={prevStep} variant="outlineNo">
                             Atrás
                         </Button>
                     )}
                 </div>
                 <div className="flex justify-end">
-                    <Button onClick={nextStep}  size="lg">
-                        Siguiente
-                    </Button>
+                    {step < 4 ? (
+                        <Button onClick={nextStep}  size="lg">
+                            Siguiente
+                        </Button>
+                    ): (
+                        <Button onClick={handleSubmit} size="lg">
+                            Crear cuenta
+                        </Button>
+                    )}
                 </div>
-                
         </div>
     );
 
@@ -98,11 +103,7 @@ export default function RegisterComponent() {
                         />
                     </div> 
                 </div>
-                <div className="flex justify-end">
-                    <Button onClick={nextStep}  size="lg">
-                        Siguiente
-                    </Button>
-                </div>
+                {NavigationButtons()}
             </>
             );
             case 2:
@@ -226,20 +227,7 @@ export default function RegisterComponent() {
                         label="Confirmar contraseña"
                     />
                 </div>
-                <div className="grid grid-cols-2 px-10 gap-4">
-                    <div className="flex justify-start">
-                        {prevStep && (
-                            <Button onClick={prevStep} variant="outlineNo">
-                                Atrás
-                            </Button>
-                        )}
-                    </div>
-                    <div className="flex justify-end">
-                        <Button onClick={handleSubmit} size="lg">
-                            Crear cuenta
-                        </Button>
-                    </div>
-                </div>
+                {NavigationButtons()}
             </>
             );
             default:
