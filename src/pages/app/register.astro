@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import RegisterComponent from '../../components/features/auth/RegisterComponent.jsx';
+import { ThemeProvider } from '../../context/ThemeContext.jsx';
+---
+
+<Layout title="Crear cuenta | YourUniversity">
+    <ThemeProvider client:load>
+        <RegisterComponent client:load />
+    </ThemeProvider>
+</Layout>

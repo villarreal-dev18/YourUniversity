@@ -45,7 +45,7 @@ const Input = ({
             px-2 transition-all duration-200 ease-out
             peer-placeholder-shown:text-base 
             ${isDarkMode ? 'peer-placeholder-shown:text-text-muted-dark' : 'peer-placeholder-shown:text-text-muted-light'} 
-            peer-placeholder-shown:top-4 peer-focus:top-2 
+            peer-placeholder-shown:top-4 peer-focus:top-0.5 
             peer-focus:text-xs 
             ${isDarkMode ? 'peer-focus:text-text-primary-dark' : 'peer-focus:text-text-primary-light dark:peer-focus:text-text-primary-dark'}`}
         >
