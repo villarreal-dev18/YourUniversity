@@ -98,6 +98,11 @@ export default function RegisterComponent() {
                         />
                     </div> 
                 </div>
+                <div className="flex justify-end">
+                    <Button onClick={nextStep}  size="lg">
+                        Siguiente
+                    </Button>
+                </div>
             </>
             );
             case 2:
@@ -107,6 +112,32 @@ export default function RegisterComponent() {
                 <p className="text-center text-text-secondary-light dark:text-text-secondary-dark mb-6 px-12">
                     Por favor, ingresa tus datos adicionales.
                 </p>
+                <div className="space-y-6">
+                    <div>
+                        <select 
+                            id="sex" 
+                            className="peer text-text-primary-light dark:text-text-primary-dark rounded-2xl outline-none border-none
+                            bg-hover-light dark:bg-secondary-dark px-6 py-4 w-full focus:border-black focus:ring-0 focus:bg-gray-200
+                            placeholder:text-sm hover:cursor-pointer hover:bg-gray-200 transition-colors duration-150"
+                            value={sex}
+                            onChange={(e) => setSex(e.target.value)}
+                            required>
+                            <option value="" disabled selected>Sexo</option>
+                            <option value="Masculino">Masculino</option> 
+                            <option value="Femenino">Femenino</option>
+                        </select>
+                    </div>
+                    <div>
+                        <Input
+                        id="dob"
+                        type="date"
+                        value={dob}
+                        onChange={(e) => setDob(e.target.value)}
+                        label="Fecha de nacimiento"
+                        />
+                    </div>
+                </div>
+                {NavigationButtons()}
             </>
             );
             case 3:
@@ -116,6 +147,58 @@ export default function RegisterComponent() {
                 <p className="text-center text-text-secondary-light dark:text-text-secondary-dark mb-6 px-12">
                     Por favor, ingresa tus datos académicos.
                 </p>
+                <div className="space-y-6">
+                             <select 
+                                 id="university" 
+                                 className="peer text-text-primary-light dark:text-text-primary-dark rounded-2xl outline-none border-none
+                                     bg-hover-light dark:bg-secondary-dark px-6 py-4 w-full focus:border-black focus:ring-0 focus:bg-gray-200
+                                     placeholder:text-sm hover:cursor-pointer hover:bg-gray-200 transition-colors duration-150"
+                                 value={university}
+                                 onChange={(e) => setUniversity(e.target.value)}
+                                 required
+                             >
+                                 <option value="" disabled selected>Universidad</option>
+                                 <option value="Universidad_Surcolombiana">Universidad Surcolombiana</option>
+                                 <option value="Universidad Nacional">Universidad Nacional</option>
+                                 <option value="Universidad de Antioquia">Universidad de Antioquia</option>
+                                 <option value="Universidad de los Andes">Universidad de los Andes</option>
+                                 <option value="Universidad de Caldas">Universidad de Caldas</option>
+                                 <option value="Universidad de Cundinamarca">Universidad de Cundinamarca</option>
+                                 <option value="Universidad de Córdoba">Universidad de Córdoba</option>
+                                 <option value="Universidad de la Santísima Trinidad">Universidad de la Santísima Trinidad</option>
+                                 <option value="Universidad de La Guajira">Universidad de La Guajira</option>
+                                 <option value="Universidad de La Sabana">Universidad de La Sabana</option>
+                                 <option value="Universidad de Manizales">Universidad de Manizales</option>
+                                 <option value="Universidad de Medellín">Universidad de Medellín</option>
+                                 <option value="Universidad de Nariño">Universidad de Nariño</option>
+                                 <option value="Universidad de Pamplona">Universidad de Pamplona</option>
+                                 <option value="Universidad de San Buenaventura">Universidad de San Buenaventura</option>
+                                 <option value="Universidad de San Carlos de Guatemala">Universidad de San Carlos de Guatemala</option>
+                                 <option value="Universidad de San Mateo">Universidad de San Mateo</option>
+                                 <option value="Universidad de Santa Marta">Universidad de Santa Marta</option>
+                                 <option value="Universidad de Sucre">Universidad de Sucre</option>
+                                 <option value="Universidad de Tolima">Universidad de Tolima</option>
+                             </select>
+                         </div>
+ 
+                         <div className="space-y-6">
+                             <select 
+                                 id="career" 
+                                 className="peer text-text-primary-light dark:text-text-primary-dark rounded-2xl outline-none border-none
+                                     bg-hover-light dark:bg-secondary-dark px-6 py-4 w-full focus:border-black focus:ring-0 focus:bg-gray-200
+                                     placeholder:text-sm hover:cursor-pointer hover:bg-gray-200 transition-colors duration-150"
+                                 value={career}
+                                 onChange={(e) => setCareer(e.target.value)}
+                                 required
+                             >
+                                 <option value="" disabled selected>Carrera</option>
+                                 <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
+                                 <option value="Ingeniería de Software">Ingeniería de Software</option>
+                                 <option value="Ingeniería de Minas">Ingeniería de Minas</option>
+                                 <option value="Ingeniería de Alimentos">Ingeniería de Alimentos</option>
+                             </select>
+                         </div>
+                         {NavigationButtons()}
             </>
             );
             case 4:
@@ -125,8 +208,42 @@ export default function RegisterComponent() {
                 <p className="text-center text-text-secondary-light dark:text-text-secondary-dark mb-6 px-12">
                     Por favor, crea una contraseña segura para tu cuenta.
                 </p>
+                <div className="space-y-6">
+                    <Input
+                        id="password"
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        label="Contraseña"
+                    />
+                </div>
+                <div className="space-y-6">
+                    <Input
+                        id="confirmPassword"
+                        type="password"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        label="Confirmar contraseña"
+                    />
+                </div>
+                <div className="grid grid-cols-2 px-10 gap-4">
+                    <div className="flex justify-start">
+                        {prevStep && (
+                            <Button onClick={prevStep} variant="outlineNo">
+                                Atrás
+                            </Button>
+                        )}
+                    </div>
+                    <div className="flex justify-end">
+                        <Button onClick={handleSubmit} size="lg">
+                            Crear cuenta
+                        </Button>
+                    </div>
+                </div>
             </>
             );
+            default:
+                return null;
         };
     };
     return (
@@ -135,7 +252,7 @@ export default function RegisterComponent() {
              text-text-primary-light dark:text-text-primary-dark space-y-8">
                 {ProgressBar()}
                 {renderStep()}
-                {NavigationButtons()}
+                
             </div>
         </main>
     );
