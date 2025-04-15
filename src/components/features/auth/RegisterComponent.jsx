@@ -42,7 +42,7 @@ export default function RegisterComponent() {
     );
 
     const NavigationButtons = () => (
-        <div className="grid grid-cols-2 px-10 gap-4">
+        <div className="grid grid-cols-2 md:px-10 gap-4">
                 <div className="flex justify-start">
                     {step > 1 && (
                         <Button onClick={prevStep} variant="outlineNo">
@@ -70,7 +70,7 @@ export default function RegisterComponent() {
             return (
             <>
                 <h1 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center pt-8">Crear cuenta</h1>
-                <p className="text-center text-text-secondary-light dark:text-text-secondary-dark mb-6 px-12">
+                <p className="text-center text-text-secondary-light dark:text-text-secondary-dark mb-6 md:px-12">
                     Bienvenido a YourUniversity, tu plataforma educativa en línea.
                     Para empezar, por favor ingresa tus datos personales.
                 </p>
@@ -102,6 +102,20 @@ export default function RegisterComponent() {
                             label="Correo electrónico"
                         />
                     </div> 
+                </div>
+                <div className="flex items-center">
+                    <input
+                        id="termsandconditions"
+                        type="checkbox"
+                        checked={termsandConditions}
+                        onChange={(e) => setTermsandConditions(e.target.checked)}
+                        className="h-4 w-4 rounded border-none bg-text-secondary-dark
+                        text-accent-light focus:ring-0 focus:ring-offset-0 focus:outline-none 
+                        dark:bg-secondary-dark dark:checked:bg-accent-dark "
+                    />
+                    <label htmlFor="termsandconditions" className="ml-2 block text-sm text-text-accent-light dark:text-text-accent-dark">
+                        Acepto los <a href="/termsandconditions" className="text-text-accent-light hover:text-text-primary-light dark:text-text-accent-dark dark:hover:text-text-primary-dark">términos y condiciones</a>
+                    </label>
                 </div>
                 {NavigationButtons()}
             </>
@@ -236,7 +250,7 @@ export default function RegisterComponent() {
     };
     return (
         <main className="flex items-center justify-center min-h-screen bg-secondary-light dark:bg-secondary-dark">
-            <div className="w-full max-w-[800px] min-h-[600px] py-4 px-24 bg-primary-light dark:bg-primary-dark rounded-xl shadow-lg transition-all duration-300
+            <div className="w-full max-w-[800px] min-h-[600px] py-4 px-8 md:px-24 bg-primary-light dark:bg-primary-dark rounded-xl shadow-lg transition-all duration-300
              text-text-primary-light dark:text-text-primary-dark space-y-8">
                 {ProgressBar()}
                 {renderStep()}

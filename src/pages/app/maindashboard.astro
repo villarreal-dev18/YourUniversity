@@ -2,10 +2,13 @@
 import Layout from "../../layouts/Layout.astro";
 import Navdashboard from "../../components/features/dashboard/navdashboard.astro";
 import Dashboard from "../../components/features/dashboard/dashboard.astro";
+import { ThemeProvider } from '../../context/ThemeContext.jsx';
 ---
 <Layout>
-    <div class="flex md:p-3 min-h-scren bg-neutral-100 md:space-x-3  ">
-        <Navdashboard />
-        <Dashboard />
-    </div>
+    <ThemeProvider client:load>
+        <div class="flex md:p-1.5 max-h-scren bg-primary-light dark:bg-primary-dark md:space-x-3  ">
+            <Navdashboard />
+            <Dashboard />
+        </div>
+    </ThemeProvider>
 </Layout>

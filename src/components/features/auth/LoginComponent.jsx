@@ -67,7 +67,7 @@ export default function LoginComponent() {
               </label>
             </div>
             
-            <div className="text-sm">
+            <div className="text-sm pl-8">
               <a href="#" className="font-medium text-text-accent-light hover:text-text-primary-light dark:text-text-accent-dark dark:hover:text-text-primary-dark">
                 ¿Olvidaste tu contraseña?
               </a>
