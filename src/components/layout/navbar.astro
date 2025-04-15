@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from '../ui/ThemeToggle.jsx';
+import StartModalComponent from '../features/auth/StartModalComponent.jsx';
 ---
 
 
@@ -25,7 +26,7 @@ transition-colors duration-300">
             </ul>
         </div>
         <div id="mobil-login-btn" class="flex items-center justify-center space-x-5 sm:ml-96 md:hidden ">
-          <button class="bg-gray-950 text-white rounded-full px-2 py-1">Empezar
+          <button onclick="window.dispatchEvent(new CustomEvent('start-now-modal'))" class="bg-gray-950 text-white rounded-full px-2 py-1">Empezar
           </button>
         </div>
         <div class="hidden  items-center space-x-5 lg:flex lg:overflow-auto">
@@ -43,3 +44,4 @@ transition-colors duration-300">
               </div>
         </div>
 </nav>
+

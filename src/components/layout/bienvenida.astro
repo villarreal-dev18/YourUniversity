@@ -1,9 +1,10 @@
 ---
 import '../../styles/dotanimation.css';
+import StartModalComponent from '../features/auth/StartModalComponent.jsx';
 const cells = 20 * 20;
 ---
 
-<main class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 dark:bg-primary-dark bg-primary-light transition-colors duration-300">
+<main class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 dark:bg-primary-dark bg-primary-light transition-colors duration-300 z-10">
     <div class="space-y-20">
         <section class="relative min-h-[45vh] lg:min-h-[80vh] flex items-center justify-center shadow-lg rounded-xl overflow-hidden md:mb-3">
             <div class="absolute w-full h-full bg-gray-50 dark:bg-primary-dark rounded-2xl overflow-hidden inset-0 filter brightness-95 transition-colors duration-300">
@@ -19,7 +20,7 @@ const cells = 20 * 20;
             <div class="absolute w-full h-full inset-0 bg-radial-gradient pointer-events-none"></div>
             <div class="absolute w-full h-full inset-0 vignette-effect pointer-events-none"></div>
             
-            <div class="relative mt-12 z-10 text-center grid grid-rows-3 items-center justify-center w-full filter drop-shadow-2xl">
+            <div class="relative mt-12  text-center grid grid-rows-3 items-center justify-center w-full filter drop-shadow-2xl">
                 <h1 class="text-4xl md:text-8xl font-bold text-black dark:text-white glow-effect transition-colors duration-300" style="font-family: 'Bricolage Grotesque', sans-serif;">YourUniversity</h1>
                 <p class="flex dark:text-primary-light md:max-w-xl text-center md:text-xl md:mx-52 transition-colors duration-300">
                    La plataforma que te ayuda a organizar tu vida universitaria.
@@ -60,7 +61,7 @@ const cells = 20 * 20;
         </section>
     </div>
 </main>
-
+<StartModalComponent client:load/>
 <script>
   document.getElementById('start-now-modal-md')?.addEventListener('click', () => {
     window.dispatchEvent(new CustomEvent('start-now-modal'));

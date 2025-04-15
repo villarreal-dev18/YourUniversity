@@ -25,7 +25,7 @@ const Button = ({
   const variants = {
     primary: 'bg-primary-dark dark:bg-primary-light text-primary-light dark:text-primary-dark hover:scale-105',
     secondary: 'bg-secondary-dark dark:bg-secondary-light text-secondary-light dark:text-secondary-dark hover:scale-105',
-    outline: 'bg-transparent border border-gray-300 text-gray-800 hover:bg-gray-100',
+    outline: 'bg-transparent border border-border-light dark:border-border-dark text-text-primary-light dark:text-text-primary-dark hover:bg-hover-light dark:hover:bg-hover-dark',
     outlineNo: 'bg-transparent border-none text-text-accent-light dark:text-text-accent-light hover:text-text-primary-light dark:hover:text-text-primary-dark'
   };
 
